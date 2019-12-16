@@ -12,6 +12,32 @@ function getWeather(lat, lon) {
 			const temperature = json.main.temp;
 			const place = json.name;
 			weather.innerText = `${temperature} @ ${place}`;
+			const main = json.weather[0].main;
+			imgNumber = 0;
+			switch(main) {
+				case "Clear":
+					imgNumber = 1;
+					break;
+				case "Clouds":
+					imgNumber = 2;
+					break;
+				case "Rain":
+					imgNumber = 1;
+					break;
+				case "Thunderstorm":
+					imgNumber = 1;
+					break;
+				case "Snow":
+					imgNumber = 3;
+					break;
+				case "Drizzle":
+					imgNumber = 1;
+					break;
+			}
+			const image = new Image();
+			image.src = `images/${imgNumber}.jpg`;
+			image.classList.add("bgImage");
+			body.prepend(image);
 		});
 }
 
