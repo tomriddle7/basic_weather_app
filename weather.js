@@ -16,7 +16,7 @@ function getWeather(lat, lon) {
 }
 
 function saveCoords(coordsObj) {
-	localStorage.setItem(COORDS, JSON.stringfy(coordsObj));
+	localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
 function handleGeoSuccess(position) {
@@ -38,7 +38,7 @@ function askForCoords() {
 }
 function loadCoords() {
 	const loadedCoords = localStorage.getItem(COORDS);
-	if(loadCoords === null) {
+	if(loadedCoords === null) {
 			askForCoords();
 	}
 	else {
