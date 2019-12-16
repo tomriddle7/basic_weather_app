@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const weather = document.querySelector(".js-weather");
 
 const API_KEY = "d5d4e22204333ea33d6a7c1529fc8c48";
