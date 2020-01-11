@@ -37,14 +37,7 @@ function askForCoords() {
 	navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 function loadCoords() {
-	const loadedCoords = localStorage.getItem(COORDS);
-	if(loadCoords === null) {
-			askForCoords();
-	}
-	else {
-		const parsedCoords = JSON.parse(loadedCoords);
-		getWeather(parsedCoords.latitude, parsedCoords.longitude);
-	}
+	askForCoords();
 }
 
 function init() {
